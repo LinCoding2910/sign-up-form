@@ -11,37 +11,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="title-container">
+    <main id="main-container">
         <div id="title">
-            <img id="title-logo" src="https://backend.liverpoolfc.com/sites/default/files/styles/lg/public/2022-07/MicrosoftTeams-image%20%2818%29%20%281%29.png?itok=KpyRf5vG" alt="LiverpoolFC-logo">
-            <h1 id="title-name">Liverpool</h1>
+            <img src="https://backend.liverpoolfc.com/sites/default/files/styles/lg/public/2022-07/MicrosoftTeams-image%20%2818%29%20%281%29.png?itok=KpyRf5vG" alt="Liverpool Logo" id="logo">
+            <h1>Reds&trade;</h1>
         </div>
-    </div>
-    <div id="body-container">
-        <p>Sign up now to get the latest inside news on your favourite club!</p>
-        <form action="#" method="post">
-            <h2>Get started</h2>
-            <fieldset>
-                <legend>Details</legend>
+        <p id="convincing-message">Sign up now to get exclusive news on your favourite club!</p>
+        <p id="image-credit">Photo by <a href="https://unsplash.com/@sonance?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Viktor Forgacs</a> on <a href="https://unsplash.com/photos/depth-of-field-photography-of-grass-E9jhg914t44?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
+    </main>
+    <form action="#" method="post" id="sign-up-form">
+        <h2 id="form-heading">Get Started</h2>
+        <fieldset id="account-details" name="account-details">
+            <div>
                 <label for="first-name">First Name</label>
-                <input type="text" id="first-name" maxlength="20" required>
+                <input type="text" id="first-name" pattern="^[A-Za-z0-9_]{1,15}$" required>
+            </div>
+            <div>
                 <label for="last-name">Last Name</label>
-                <input type="text" id="last-name" maxlength="50" required>
+                <input type="text" id="last-name" pattern="^[A-Za-z0-9_]{1,40}$" required>
+            </div>
+            <div>
                 <label for="email">Email</label>
                 <input type="email" id="email" required>
-                <label for="phone-number">Phone Number</label>
-                <input type="tel" id="phone-number">
-                <label for="password">Password</label>
-                <input type="password" id="password" required>
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" required>                
-            </fieldset>
-            <button type="submit">Create account</button>
-            <div>
-                <div>Already have an account?</div>
-                <a href="#">Log in</a>
             </div>
-        </form>
-    </div>
+            <div>
+                <label for="phone-number">Phone Number</label>
+                <input type="text" id="phone-number">    
+            </div>
+            <div>
+                <label for="password">Password (Ex:1#9Rkl-23!)</label>
+                <input type="text" id="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+            </div>
+            <div>
+                <label for="confirm-password">Confirm Password</label>
+                <input type="text" id="confirm-password" required>
+            </div>
+        </fieldset>
+        <button type="submit">Create Account</button>
+        <p>Already have an account? <a href="#">Sign in</a></p>
+    </form>
 </body>
 </html>
